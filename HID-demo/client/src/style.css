@@ -1,0 +1,308 @@
+.app-container {
+    background-color: #03009C;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.inner-app-container, .inner-app-container-token {
+    padding: 20px;
+    background-color: white;
+    /* width: 75%; */
+    margin: 0px auto;
+    border-radius: 5px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.header-container {
+    height: 125px;
+    background-color: #03009C !important;
+}
+
+.inner-app-container-token {
+    width: 30%;     
+    border-radius: 5px;
+    align-items: center;
+}
+
+/* Small screens (phones) */
+@media (max-width: 576px) {
+    .inner-app-container, .inner-app-container-token {
+        width: 100%;
+        /* Full width for tablets and mobile */        
+        border-radius: 0;     
+    }   
+    .div-show-for-mobile {
+        display: block !important;
+        background-color: #03009C !important;
+        color: white;
+    }
+
+    .div-hide-for-mobile {
+        display: none !important;
+    }
+
+    .google-wallet-badge-img {
+        width: 282px;
+        height: 131px;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .inner-app-container {
+        width: 100%;
+        /* Full width for tablets and mobile */   
+        border-radius: 0;
+    }
+    .inner-app-container-token {
+        width: 100%; 
+        border-radius: 0px;
+    }
+    .div-show-for-mobile {
+        display: block !important;
+        background-color: #03009C !important;
+        color: white;
+    }
+
+    .div-hide-for-mobile {
+        display: none !important;
+    }
+
+    .google-wallet-badge-img {
+        width: 282px;
+        height: 131px;
+        border-radius: 15px;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) {
+    .inner-app-container {
+        width: 100%;
+        /* Full width for tablets and mobile */
+        /* height: 100%; */
+        /* Full height for tablets and mobile */
+        border-radius: 0;
+        /* Remove rounded corners for full screen */
+    }
+
+    .inner-app-container-token {
+        width: 75%;   
+        border-radius: 5px;
+    }
+
+    .div-show-for-mobile {
+       display: none !important;
+    }
+
+    .div-hide-for-mobile {
+        display: block !important;
+    }
+
+    .google-wallet-badge-img {       
+        width: 564px;
+        height: 262px;
+        border-radius: 15px;
+
+    }
+}
+
+/* Large screens (laptops) */
+@media (min-width: 992px) {
+    .div-show-for-mobile {
+        display: none !important;
+    }
+    
+    .div-hide-for-mobile {
+        display: block !important;
+    }
+
+    .inner-app-container {
+        width: 75%;
+        /* Full width for tablets and mobile */
+        /* height: 100%; */
+        /* Full height for tablets and mobile */
+        border-radius: 5px;
+        /* Remove rounded corners for full screen */
+    }
+
+    .inner-app-container-token {
+        width: 35%;     
+        border-radius: 5px;
+        align-items: center;
+    }
+
+    .hid-align-div {
+        text-align: center;
+    }
+
+    .google-wallet-badge-img {       
+        width: 564px;
+        height: 262px;
+        border-radius: 15px;
+    }
+}
+
+.hid-galaxy .hid-logo__app-name {
+    font-size: 24px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.56);
+}
+
+.heading-2 {
+    font-family: 'Roboto' !important;
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    line-height: 22px;
+    color: #494949;
+}
+
+.dashboard-card {
+    padding: 16px 24px !important;
+}
+
+.dashboard-card-heading {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.dashboard-card-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: justify;
+}
+
+.white-bg-button {
+    border-color: #002E56 !important;
+    background-color: #ffffff !important;
+    color: #000 !important;
+    border-radius: 5px !important;
+}
+
+.margin-top-18 {
+    margin-top: 18px;
+}
+
+.margin-top-14 {
+    margin-top: 14px;
+}
+
+
+.margin-bottom-22 {
+    margin-bottom: 22px !important;
+}
+
+.align-item-right {
+    text-align: right;
+}
+
+input.hid-form-element__control {
+    max-width: 300px;
+}
+
+a.a-link,
+a.a-link:hover,
+a.a-link:visited {
+    color: #01B3FF;
+}
+
+.hid-galaxy .iconography--default path {
+    fill: #00539B !important;
+}
+
+div#org-info-block input.hid-form-element__control {
+    border: 2px solid #00539B;
+}
+
+input#companyAddress {
+    max-width: 700px;
+}
+
+.footer-privacy-notice-margin {
+    margin-left: 7px;
+}
+
+.heading-5 {
+    font-family: 'Roboto' !important;
+    font-style: normal;
+    font-size: 16px !important;
+    line-height: 22px;
+}
+
+.error-msg {
+    color: #ff0000;
+}
+
+.btn-primary {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+.btn-width-145 {
+    width: 145px;
+}
+
+.btn-width-300 {
+    width: 300px;
+}
+
+.hid-galaxy .hid-logo__icon {
+    width: 78px;
+    height: 32px;
+}
+
+.h1-title {
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #08387F;
+}
+
+.google-wallet-div {
+    margin-top: 10px;
+    border-radius: 10px;
+    background: url('assets/images/GoogleBackgroundImage.png');
+    height: 241px;
+    display: flex;
+    max-width: 369px;
+    align-items: center;
+    color: white;
+    text-align: left;
+}
+
+.apple-wallet-div {
+    border-radius: 10px;
+    margin-top: 10px;
+    max-width: 369px;
+    background: url('assets/images/AppleBackgroundImage.png');
+    height: 241px;
+    color: white;   
+    align-items: center;
+    display: flex;
+}
+
+.btn-blue-color {
+    background-color: #03009C !important;
+}
+
+.text-color-white {
+    color: white;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

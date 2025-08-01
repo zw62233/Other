@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dbe39302.css",
+    "main.js": "/static/js/main.c6ad6633.js",
+    "static/js/313.31da7ee1.chunk.js": "/static/js/313.31da7ee1.chunk.js",
+    "static/js/832.417594ad.chunk.js": "/static/js/832.417594ad.chunk.js",
+    "static/js/27.b69899fe.chunk.js": "/static/js/27.b69899fe.chunk.js",
+    "static/media/google_wallet_badge.png": "/static/media/google_wallet_badge.54e1825191198bca8b43.png",
+    "static/media/AppleBackgroundImage.png": "/static/media/AppleBackgroundImage.8a013e6ed5c3281ee516.png",
+    "static/media/GoogleBackgroundImage.png": "/static/media/GoogleBackgroundImage.d62794e7b191c1880957.png",
+    "static/media/apple_wallet_button.png": "/static/media/apple_wallet_button.d18c5aeccb2ee779ec59.png",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.dbe39302.css",
+    "static/js/main.c6ad6633.js"
+  ]
+}
