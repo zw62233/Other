@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+<!--    <springProperty scope="context" name="appName" source="spring.application.name"/>-->
+    <!--    <springProperty scope="context" name="rapid7Token" source="rapid7.token"/>-->
+    <!--    <springProperty scope="context" name="rapid7Region" source="rapid7.region"/>-->
+
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+<!--    <appender name="FILE" class="ch.qos.logback.core.FileAppender">-->
+<!--        <file>origo-webpush-provisioning.log</file>-->
+<!--        <encoder>-->
+<!--            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+
+    <!--    <appender name="LE" class="com.rapid7.logback.LogentriesAppender">-->
+    <!--        <Token>${rapid7Token}</Token>-->
+    <!--        <Region>${rapid7Region}</Region>-->
+    <!--        <Debug>False</Debug>-->
+    <!--        <Ssl>true</Ssl>-->
+    <!--        <facility>USER</facility>-->
+    <!--        <layout>-->
+    <!--            <pattern>%d{yyyy-MM-dd} | %d{HH:mm:ss.SSS} | %-20.20thread | %5p | %-50.50(x-request-id: %X{x-request-id}) |-->
+    <!--                %-50.50logger{100} | %m%n-->
+    <!--            </pattern>-->
+    <!--        </layout>-->
+    <!--    </appender>-->
+
+    <!--    <springProfile name="aws">-->
+    <!--        <root level="INFO">-->
+    <!--            <appender-ref ref="LE"/>-->
+    <!--        </root>-->
+    <!--        <logger name="com.hidglobal.origo" additivity="false" level="DEBUG">-->
+    <!--            <appender-ref ref="LE"/>-->
+    <!--        </logger>-->
+    <!--    </springProfile>-->
+    <!--    <springProfile name="aws">-->
+    <!--        <root level="INFO">-->
+    <!--            <appender-ref ref="LE"/>-->
+    <!--        </root>-->
+    <!--    </springProfile>-->
+
+    <root level="INFO">
+<!--        <appender-ref ref="FILE"/>-->
+<!--        <appender-ref ref="LE"/>-->
+        <appender-ref ref="Console"/>
+    </root>
+</configuration>
