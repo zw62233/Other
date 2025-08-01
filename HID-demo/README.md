@@ -9,7 +9,7 @@ This is a sample web provisioning application that integrates with HID Origo ser
 
 Make sure the following dependencies are installed:
 
-- **Java**: 17  
+- **Java**: 8  
 - **Node.js**: 23.11 or later  
 - **npm**: 10.9.2 or later  
 
