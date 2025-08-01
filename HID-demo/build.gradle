@@ -1,0 +1,85 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+}
+
+plugins {
+	id 'java'
+	id 'com.google.cloud.tools.jib' version "3.4.4"
+	id 'org.springframework.boot' version '2.7.18'
+	id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'com.hidglobal.origo'
+version = '0.0.1'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(8)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'commons-codec:commons-codec:1.18.0'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+tasks.register('buildFrontend', Exec) {
+	workingDir "$projectDir/client"
+	def apiBaseUrl = System.getenv("REACT_APP_API_BASE_URL") ?: "http://localhost:9090"
+	environment "REACT_APP_API_BASE_URL", apiBaseUrl
+	if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+		print("platform is : windows")
+		commandLine 'cmd', '/c', 'npm install && npm run build'
+	} else {
+		commandLine 'sh', '-c', 'npm install && npm run build'
+	}
+}
+
+tasks.register('copyFrontendToResources', Copy) {
+	dependsOn buildFrontend
+	from "$projectDir/client/build"
+	into "$projectDir/src/main/resources/static"
+}
+
+tasks.processResources.dependsOn copyFrontendToResources
+
+jib {
+	from {
+		image = "arm64v8/amazoncorretto:21-alpine-jdk"
+		platforms {
+			platform {
+				architecture = 'arm64'
+				os = 'linux'
+			}
+		}
+	}
+	to {
+		image = "${System.getenv("aws_repo_url")}/webportal/origo-webpush-provisioning-service:${System.getenv("latestTag")}"
+	}
+}
+
+tasks.jib.dependsOn buildFrontend
+

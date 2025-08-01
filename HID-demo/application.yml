@@ -1,0 +1,31 @@
+server:
+  port: 9090
+#  servlet:
+#    context-path: /webpush
+
+spring:
+  application:
+    name: Origo WebPush Provisioning
+
+web-push:
+  profile: prod
+  application-id: ${WPP_APPLICATION_ID:HID-ETERNA-WALLET-DEV}
+  auth-url: ${WPP_AUTH_BASE_URL:https://api.origo.hidglobal.com}
+  provisioning-url: ${WPP_BASE_URL:https://web.api.origo.hidglobal.com}
+  client-details:
+    organization-id: ${WPP_ORG_ID:7515423}
+    client-id: ${WPP_CLIENT_ID:7515423-OSRV5544877321}
+    client-secret: ${WPP_CLIENT_SECRET:P@ssw0rd}
+  google:
+    client-id: ${WPP_GOOGLE_CLIENT_ID:xxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com}
+    client-secret: ${WPP_GOOGLE_CLIENT_SECRET:xxxxxx-xxxxxxxxxxxxxxxx-xxxxxxxxxxx}
+    redirect-url: ${WPP_GOOGLE_REDIRECT_URI:http://localhost:9090}
+    provisioning-url: ${WPP_GOOGLE_BASE_URL:https://www.googleapis.com/}
+  apple:
+    partner-id: ${WPP_APPLE_PARTNER_ID:ORG-e1c8ac3a-3a84-43e6-b593-738ecc8ebbd9}
+    provisioning-url: ${WPP_APPLE_BASE_URL:https://apple-pay.apple.com}
+  error-mapping-details:
+    INVALID_ISSUANCE_TOKEN: ${ERROR_ISS_TOKEN_INVALID_DES:There was an issue processing your request. If this issue continues, the link may have expired or is no longer valid. Please request a new one or contact support for assistance}
+    ISSUANCE_TOKEN_EXPIRED: ${ERROR_ISS_TOKEN_EXPIRED_DES:There was an issue processing your request. If this issue continues, the link may have expired or is no longer valid. Please request a new one or contact support for assistance}
+    UN_SUPPORTED_REQUEST: ${ERROR_UNSUPPORTED_REQ_DES:There was an issue processing your request. If this issue continues, the link may have expired or is no longer valid. Please request a new one or contact support for assistance}
+    CARD_IN_TOO_MANY_WALLETS: ${ERROR_CARD_IN_TOO_MANY_DES:You already have a card on your device. If you don't see it or face any issues, please contact support for assistance}
